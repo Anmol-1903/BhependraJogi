@@ -22,4 +22,8 @@ public class CameraFollow : MonoBehaviour
         Vector3 currentVelocity = Vector3.zero;
         transform.position = Vector3.SmoothDamp(transform.position, _target.position + _offset, ref currentVelocity, _laziness);
     }
+    private void LateUpdate()
+    {
+        transform.LookAt(_target.position);
+    }
 }

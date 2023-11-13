@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18027039, g: 0.22569843, b: 0.30691528, a: 1}
+  m_IndirectSpecularColor: {r: 0.18027052, g: 0.22569884, b: 0.30691585, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -144,7 +144,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &88727372
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -286,7 +286,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &242538811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2588787237552858410, guid: 26aeb85c94e66b249bffd534d51079fc,
@@ -368,7 +368,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &313027635
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,9 +381,9 @@ GameObject:
   - component: {fileID: 313027639}
   - component: {fileID: 313027638}
   - component: {fileID: 313027637}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -548,7 +548,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &798069097
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &1074864993
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -929,7 +929,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &1194723443
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1011,7 +1011,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &1288000102
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1152,7 +1152,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1344977723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5168695635008074109, guid: 26aeb85c94e66b249bffd534d51079fc,
@@ -1174,7 +1174,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &1344977725
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1259,7 +1259,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca86d88d29d0a647b5db3f250aa1954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 3
+--- !u!1 &1356955246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1356955247}
+  - component: {fileID: 1356955249}
+  - component: {fileID: 1356955248}
+  m_Layer: 0
+  m_Name: DeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1356955247
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356955246}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -11.03}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1350971611}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356955248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356955246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8b7512358e89664a8a2a9d38ec0c71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1356955249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356955246}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 32.134125, y: 6.7370934, z: 4.9588475}
+  m_Center: {x: -0.025592804, y: 2.8685467, z: -0.61849475}
 --- !u!1 &1362136081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 827075974287967996, guid: 26aeb85c94e66b249bffd534d51079fc,
@@ -1281,7 +1339,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1362136083
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1328,6 +1386,10 @@ MonoBehaviour:
     type: 3}
   _mainCam: {fileID: 963194227}
   _obstacleDestroyTimer: 2
+  _whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  offset: {x: 0, y: 1, z: 0}
 --- !u!4 &1676238582
 Transform:
   m_ObjectHideFlags: 0
@@ -1488,7 +1550,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!144 &1705823488
 CharacterJoint:
   m_ObjectHideFlags: 0
@@ -1630,7 +1692,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &1781123411
 GameObject:
   m_ObjectHideFlags: 0

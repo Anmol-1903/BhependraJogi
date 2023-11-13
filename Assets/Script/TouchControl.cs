@@ -5,8 +5,16 @@ public class TouchControl : MonoBehaviour
     [SerializeField] GameObject _obstacle;
     [SerializeField] Camera _mainCam;
     [SerializeField] float _obstacleDestroyTimer;
+    [SerializeField] LayerMask _whatIsGround;
+    [SerializeField] Vector3 offset;
+    float _maxDis;
     GameObject obstacleClone;
+    Ray ray;
 
+    private void Start()
+    {
+        _maxDis = Mathf.Infinity;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -16,12 +24,19 @@ public class TouchControl : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 touchPos = _mainCam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 20f));
-            obstacleClone =  Instantiate(_obstacle, touchPos, Quaternion.identity);
+            ray = _mainCam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Physics.Raycast(ray, out hit);
+            if (hit.transform.CompareTag("Floor"))
+            { 
+                
+                GameObject temp = Instantiate(_obstacle , hit.point + offset, Quaternion.identity);
+                temp.tag = "Obstacle";
+            }
         }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            Destroy(obstacleClone, _obstacleDestroyTimer);
-        }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawRay(ray);
     }
 }

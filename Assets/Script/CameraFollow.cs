@@ -6,10 +6,6 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] Vector3 _offset;
     [Range(0f,0.2f)]
     [SerializeField] float _laziness;
-    private void Awake()
-    {
-        _target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
     private void Start()
     {
         if(_takeOffsetFromInitialPosition)

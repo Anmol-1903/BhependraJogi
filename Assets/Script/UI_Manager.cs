@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        cameraFollow = FindObjectOfType<CameraFollow>();
+        cameraFollow = Camera.main.GetComponent<CameraFollow>();
         playerMovement = FindObjectOfType<PlayerMovement>();    
         touchControl = FindObjectOfType<TouchControl>();    
     }

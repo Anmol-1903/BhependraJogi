@@ -32,6 +32,7 @@ public class TouchControl : MonoBehaviour
                 
                 GameObject temp = Instantiate(_obstacle , hit.point + offset, Quaternion.identity);
                 temp.tag = "Obstacle";
+                Destroy(temp, 15f);
             }
         }
     }

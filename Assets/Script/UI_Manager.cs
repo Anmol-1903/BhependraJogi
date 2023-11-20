@@ -5,6 +5,7 @@ public class UI_Manager : MonoBehaviour
     CameraFollow cameraFollow;
     PlayerMovement playerMovement;
     TouchControl touchControl;
+    [SerializeField] GameObject _restartPanel;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +19,7 @@ public class UI_Manager : MonoBehaviour
         playerMovement.enabled = false;
         touchControl.enabled = false;
         gameObject.SetActive(true);
+        _restartPanel.SetActive(false);
     }
 
     public void PLayBtn()

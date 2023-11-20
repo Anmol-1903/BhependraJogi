@@ -6,4 +6,5 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
+ 
 }

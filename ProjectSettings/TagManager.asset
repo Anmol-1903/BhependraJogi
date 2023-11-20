@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Obstacle
   - NPC
+  - Plane
   layers:
   - Default
   - TransparentFX

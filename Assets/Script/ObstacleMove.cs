@@ -3,41 +3,30 @@ using System.Collections;
 
 public class ObstacleMove : MonoBehaviour
 {
-    Vector3 _startPos;
-    [SerializeField] Vector3 _movementVector;
-    [SerializeField] float periods = 2f , _rotationTimer;
+    [SerializeField] Transform[] _movePoints;
+    [SerializeField] float _moveSpeed;
+    int currentIndex;
 
-    float moveFactor;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        _startPos = transform.position;
+        currentIndex = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (periods > 0)
+        NPCMove();
+    }
+
+    void NPCMove()
+    { 
+        if(transform.position != _movePoints[currentIndex].transform.position)
         {
-            float cycles = Time.time / periods; // continuoslly growing over time
-            const float tau = Mathf.PI * 2; // constant value of 6.283
-            float rawSinwave = Mathf.Sin(cycles * tau); // going from -1 to 1
-            Debug.Log(rawSinwave);
-            moveFactor = (rawSinwave + 1f) / 2f; // recalculated to go from 0 to 1 so its 
-            Vector3 offset = moveFactor * _movementVector;
-            transform.position = _startPos + offset;
-
-            // Still in fixing-------------------->
-            if(rawSinwave > 0f)
-            {
-                transform.eulerAngles = Vector3.zero;
-            }
-            else if( rawSinwave < 0f)
-            {
-                transform.eulerAngles = new Vector3(0, 180, 0);
-            }
-            //------------------------------------->
+            transform.position = Vector3.MoveTowards(transform.position, _movePoints[currentIndex].transform.position, _moveSpeed * Time.deltaTime);
         }
-
+        else
+        {
+            currentIndex = (currentIndex + 1) % _movePoints.Length;
+        }
     }
 }

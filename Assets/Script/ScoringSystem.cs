@@ -9,7 +9,10 @@ public class ScoringSystem : MonoBehaviour
     private void Start()
     {
         _scoringText.text = "Score : " + _score;
-        _highScore = PlayerPrefs.GetInt("highscore");
+        if (_highScore <= _score)
+        {
+            _highScore = PlayerPrefs.GetInt("highscore");
+        }
         _highScore_txt.text = "High Score : " + _highScore;
 
     }
@@ -18,9 +21,9 @@ public class ScoringSystem : MonoBehaviour
         if (collision.gameObject.CompareTag("NPC"))
         {
             _score++;
-            PlayerPrefs.SetInt("highscore", _score);
             if(_highScore <= _score)
             {
+                PlayerPrefs.SetInt("highscore", _score);
                 _highScore = PlayerPrefs.GetInt("highscore");
             }
             _highScore_txt.text = "High Score : " + _highScore;

@@ -20,6 +20,9 @@ public class UI_Manager : MonoBehaviour
         touchControl.enabled = false;
         gameObject.SetActive(true);
         _restartPanel.SetActive(false);
+        Debug.Log("chal Bhosale ke bete");
+        //Normal Coding Insturcions
+
     }
 
     public void PLayBtn()

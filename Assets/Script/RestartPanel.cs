@@ -7,7 +7,7 @@ public class RestartPanel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Panel"))
         {
-            Debug.Log("Hello");
+            
             _restartPanel.SetActive(true);
             Time.timeScale = 0;
         }

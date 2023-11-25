@@ -34,7 +34,6 @@ public class TouchControl : MonoBehaviour
 
                 GameObject temp = Instantiate(_obstacle, hit.point + offset, Quaternion.identity);
                 temp.tag = "Obstacle";
-                _bombExpoEffect.transform.position = _obstacle.transform.position;
                 StartCoroutine(Timer());
             }
         }

@@ -3,8 +3,7 @@ using System.Collections;
 
 public class TouchControl : MonoBehaviour
 {
-    [SerializeField] GameObject _obstacle;
-    [SerializeField] ParticleSystem _bombExpoEffect;
+    [SerializeField] GameObject _obstacle , _bombExpoEffect;
     [SerializeField] Camera _mainCam;
     [SerializeField] float _obstacleDestroyTimer;
     [SerializeField] LayerMask _whatIsGround;
@@ -35,6 +34,7 @@ public class TouchControl : MonoBehaviour
                 GameObject temp = Instantiate(_obstacle, hit.point + offset, Quaternion.identity);
                 temp.tag = "Obstacle";
                 StartCoroutine(Timer());
+
             }
         }
     }
@@ -48,7 +48,8 @@ public class TouchControl : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
         yield return new WaitForSeconds(_obstacleDestroyTimer);
-        Instantiate(_bombExpoEffect, hit.point + offset, Quaternion.identity);
+        GameObject temp = Instantiate(_bombExpoEffect, hit.point + offset, Quaternion.identity);
+        Destroy(temp, 1f);
 
     }
 }

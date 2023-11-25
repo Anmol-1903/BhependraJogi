@@ -7754,7 +7754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacle: {fileID: 9055948757448870229, guid: 97de3c45e3dae3e42b0c67caf3845e64,
     type: 3}
-  _bombExpoEffect: {fileID: 5914124796503115929, guid: c492cfe681db21645ace106e4b2db19e,
+  _bombExpoEffect: {fileID: 6107466403664664387, guid: 04b9cfedad3e3c54a904e1fb729bd6a9,
     type: 3}
   _mainCam: {fileID: 963194227}
   _obstacleDestroyTimer: 0.58

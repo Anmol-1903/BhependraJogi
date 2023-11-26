@@ -6,7 +6,8 @@ public class UI_Manager : MonoBehaviour
     CameraFollow cameraFollow;
     PlayerMovement playerMovement;
     TouchControl touchControl;
-    [SerializeField] GameObject _restartPanel;
+    [SerializeField] GameObject _restartPanel, armature;
+    [SerializeField] Animator BhupendraAnimator;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,7 +22,8 @@ public class UI_Manager : MonoBehaviour
         touchControl.enabled = false;
         gameObject.SetActive(true);
         _restartPanel.SetActive(false);
-        Debug.Log("chal Bhosale ke bete");
+        armature.SetActive(false);
+        BhupendraAnimator.enabled = true;
         //Normal Coding Insturcions
 
     }
@@ -31,6 +33,8 @@ public class UI_Manager : MonoBehaviour
         cameraFollow.enabled = true; 
         playerMovement.enabled = true;
         touchControl.enabled = true;
+        BhupendraAnimator.enabled = false;
+        armature.SetActive(true) ;
         gameObject.SetActive(false);
     }
 

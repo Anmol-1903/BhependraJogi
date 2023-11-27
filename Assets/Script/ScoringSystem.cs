@@ -18,10 +18,10 @@ public class ScoringSystem : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("NPC"))
+        if (collision.gameObject.CompareTag("DinVich") || collision.gameObject.CompareTag("YoHoney"))
         {
-            _score++;
-            if(_highScore <= _score)
+            _score+= 1;
+            if (_highScore <= _score)
             {
                 PlayerPrefs.SetInt("highscore", _score);
                 _highScore = PlayerPrefs.GetInt("highscore");
@@ -30,10 +30,5 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log(_score);
             _scoringText.text = "Score : " + _score;
         }
-    }
-
-    void HighScore()
-    {
-        
     }
 }

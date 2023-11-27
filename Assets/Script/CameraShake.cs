@@ -16,10 +16,6 @@ public class CameraShake : MonoBehaviour
         if (!_showShake)
             StartCoroutine(Shake());
     }
-    /*public bool IsShaking()
-    {
-        return _showShake;
-    }*/
 
     IEnumerator Shake()
     {

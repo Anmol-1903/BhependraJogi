@@ -3,35 +3,17 @@ using UnityEngine;
 public class BombExplosion : MonoBehaviour
 {
     [SerializeField] float delay , _radius , _force , _Force_Height = 0.25f;
-   
 
     float counter;
+    AudioSource audioSource;
 
-    public AudioSource audioSource;
-
-    // Drag and drop your audio clip in the Inspector
-    public AudioClip myAudioClip;
-
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Start()
     {
-       
-
         counter = delay;
-
-        GameObject targetObject = GameObject.Find("BombSound");
-
-        AudioSource targetAudioSource = targetObject.GetComponent<AudioSource>();
-
-        targetAudioSource.clip = myAudioClip;
-        targetAudioSource.Play();
-
-        //audioSource = GetComponent<AudioSource>();
-
-        // Assign the audio clip to the AudioSource component
-        //audioSource.clip = myAudioClip;
-       // audioSource.Play();
-
-
     }
 
     private void Update()
@@ -46,6 +28,7 @@ public class BombExplosion : MonoBehaviour
     }
     void Explosion()
     {   
+        audioSource.Play();
         Collider[] colliders =  Physics.OverlapSphere(transform.position, _radius);
         foreach (Collider nearbyObjects in colliders)
         {

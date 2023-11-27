@@ -1,6 +1,4 @@
 using UnityEngine;
-using System.Collections;
-
 public class ObstacleMove : MonoBehaviour
 {
     [SerializeField] Transform[] _movePoints;

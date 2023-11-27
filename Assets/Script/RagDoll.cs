@@ -1,14 +1,15 @@
 using UnityEngine;
-
 public class RagDoll : MonoBehaviour
 {
     [SerializeField] GameObject armature;
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] Animator _anim;
+    private void Awake()
     {
-        if (other.CompareTag("Panel"))
-        {
-            gameObject.GetComponent<Animator>().enabled = false;
-            armature.SetActive(true);
-        }
+        _anim = GetComponent<Animator>();
+    }
+    public void ActivateRagdoll()
+    {
+        _anim.enabled = false;
+        armature.SetActive(true);
     }
 }

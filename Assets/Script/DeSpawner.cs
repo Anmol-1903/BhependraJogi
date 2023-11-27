@@ -1,12 +1,11 @@
 using UnityEngine;
-
 public class DeSpawner : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Obstacle"))
+        if (other.CompareTag("DinVich") || other.CompareTag("YoHoney"))          // Despawner collide with character
         {
-            Destroy(other.gameObject);
+            Destroy(other.gameObject, .5f);
         }
     }
 }

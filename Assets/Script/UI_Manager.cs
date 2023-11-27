@@ -8,7 +8,7 @@ public class UI_Manager : MonoBehaviour
     TouchControl touchControl;
     [SerializeField] GameObject _restartPanel, armature;
     [SerializeField] Animator BhupendraAnimator;
-    // Start is called before the first frame update
+    // Start is called on the first frame update
     void Awake()
     {
         cameraFollow = Camera.main.GetComponent<CameraFollow>();

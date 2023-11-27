@@ -1,34 +1,45 @@
 using UnityEngine;
 using TMPro;
-
 public class ScoringSystem : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI _scoringText, _highScore_txt;
-    [SerializeField] int _score , _highScore;
-
+    private static ScoringSystem _instance;
+    public static ScoringSystem Instance
+    {
+        get
+        {
+            if (_instance == null)
+                Debug.LogError("ScoringSystem not initialized");
+            return _instance;
+        }
+    }
+    TextMeshProUGUI _scoringText;
+    [SerializeField] TextMeshProUGUI _highScore_txt;
+    [SerializeField] int _score, _highScore;
+    private void Awake()
+    {
+        if (_instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        _instance = this;
+        _scoringText = GetComponent<TextMeshProUGUI>();
+    }
     private void Start()
     {
-        _scoringText.text = "Score : " + _score;
-        if (_highScore <= _score)
-        {
-            _highScore = PlayerPrefs.GetInt("highscore");
-        }
-        _highScore_txt.text = "High Score : " + _highScore;
-
+        _scoringText.text = "Score : " + 00.ToString("D2");
+        _highScore = PlayerPrefs.GetInt("highscore");
+        _highScore_txt.text = "High Score : " + _highScore.ToString("D2");
     }
-    private void OnTriggerEnter(Collider collision)
+    public void AddScore(int amt)
     {
-        if (collision.gameObject.CompareTag("DinVich") || collision.gameObject.CompareTag("YoHoney"))
+        _score += amt;
+        _scoringText.text = "Score : " + _score.ToString("D2");
+        if (_highScore < _score)
         {
-            _score+= 1;
-            if (_highScore <= _score)
-            {
-                PlayerPrefs.SetInt("highscore", _score);
-                _highScore = PlayerPrefs.GetInt("highscore");
-            }
-            _highScore_txt.text = "High Score : " + _highScore;
-            Debug.Log(_score);
-            _scoringText.text = "Score : " + _score;
+            _highScore = _score;
+            _highScore_txt.text = "High Score : " + _highScore.ToString("D2");
+            PlayerPrefs.SetInt("highscore", _highScore);
         }
     }
 }

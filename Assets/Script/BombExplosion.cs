@@ -1,38 +1,20 @@
 using UnityEngine;
 public class BombExplosion : MonoBehaviour
 {
-    [SerializeField] float delay , _radius , _force , _Force_Height = 0.25f;
-
-    float counter;
+    [SerializeField] float _radius , _force , _Force_Height = 0.25f;
     AudioSource audioSource;
-
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
-    private void Start()
-    {
-        counter = delay;
-    }
-
-    private void Update()
-    {
-        counter -= Time.deltaTime;
-
-
-        if(counter <= 0)
-        {
-            Explosion();
-        }
-    }
-    void Explosion()
+    public void Explosion()
     {   
         audioSource.Play();
         Collider[] colliders =  Physics.OverlapSphere(transform.position, _radius);
         foreach (Collider nearbyObjects in colliders)
         {
             Rigidbody rb = nearbyObjects.GetComponent<Rigidbody>();
-            if(rb != null)
+            if(rb)
             {
                 Vector3 dir = (nearbyObjects.transform.position - transform.position).normalized;
                 dir.z = 0;

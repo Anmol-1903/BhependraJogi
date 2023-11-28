@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-
 public class TouchControl : MonoBehaviour
 {
     [SerializeField] GameObject _obstacle , _bombExpoEffect;
@@ -8,14 +7,8 @@ public class TouchControl : MonoBehaviour
     [SerializeField] float _obstacleDestroyTimer;
     [SerializeField] LayerMask _whatIsGround;
     [SerializeField] Vector3 offset;
-    float _maxDis;
-    GameObject obstacleClone;
     Ray ray;
 
-    private void Start()
-    {
-        _maxDis = Mathf.Infinity;
-    }
     // Update is called once per frame
     void Update()
     {
@@ -30,11 +23,9 @@ public class TouchControl : MonoBehaviour
             Physics.Raycast(ray, out hit);
             if (hit.transform.CompareTag("Floor"))
             {
-
                 GameObject temp = Instantiate(_obstacle, hit.point + offset, Quaternion.identity);
                 temp.tag = "Obstacle";
-                StartCoroutine(Timer());
-
+                StartCoroutine(Timer(temp));
             }
         }
     }
@@ -42,14 +33,11 @@ public class TouchControl : MonoBehaviour
     {
         Gizmos.DrawRay(ray);
     }
-    IEnumerator Timer()
+    IEnumerator Timer(GameObject temp)
     {
-        ray = _mainCam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Physics.Raycast(ray, out hit);
         yield return new WaitForSeconds(_obstacleDestroyTimer);
-        GameObject temp = Instantiate(_bombExpoEffect, hit.point + offset, Quaternion.identity);
-        Destroy(temp, 1f);
-
+        temp.GetComponent<BombExplosion>().Explosion();
+        GameObject tempParticle = Instantiate(_bombExpoEffect, temp.transform.position + offset, Quaternion.identity);
+        Destroy(tempParticle, 1f);
     }
 }

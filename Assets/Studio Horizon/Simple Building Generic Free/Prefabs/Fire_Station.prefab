@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 882690300718194470}
   - component: {fileID: 3160125538751572972}
   - component: {fileID: -3012503385779164063}
+  - component: {fileID: 7703776623567080922}
   m_Layer: 0
   m_Name: Fire_Station
   m_TagString: Untagged
@@ -95,5 +96,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 16.182089, y: 14.688888, z: 15.119686}
-  m_Center: {x: 0.13989735, y: 7.344441, z: 1.235194}
+  m_Size: {x: 16.182089, y: 1.7562643, z: 11.230292}
+  m_Center: {x: 0.139897, y: 0.87813073, z: -0.70950174}
+--- !u!64 &7703776623567080922
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520681445263854137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3716608967324717099, guid: 3c63446e9714a774e9326836a60061df, type: 3}

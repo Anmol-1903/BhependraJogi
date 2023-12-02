@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9038214152448103536}
   - component: {fileID: 6524265241071788218}
   - component: {fileID: 3031124394658159309}
+  - component: {fileID: 8594719640818053384}
   m_Layer: 0
   m_Name: Market
   m_TagString: Untagged
@@ -95,5 +96,19 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 36.80795, y: 10.057004, z: 16.15768}
-  m_Center: {x: -4.2015123, y: 5.022092, z: -0.98446137}
+  m_Size: {x: 36.80795, y: 1.5602373, z: 19.05716}
+  m_Center: {x: -4.201512, y: 0.77370816, z: 1.3091962}
+--- !u!64 &8594719640818053384
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4722627683411591535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2104153811603578874, guid: 426427d09eae15a489510a472a49d806, type: 3}

@@ -5012,9 +5012,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5312f2a931d5ac04783c96d3a49c89d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 2
-  _force: 100
-  _Force_Height: 0
+  _radius: 3
+  _force: 60
+  _Force_Height: 0.6
 --- !u!135 &139642084713805991
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -87,10 +87,10 @@ QualitySettings:
     shadowCascades: 1
     shadowDistance: 100
     shadowNearPlaneOffset: 0
-    shadowCascade2Split: 0.33333334
-    shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
+    shadowCascade2Split: 0.30471075
+    shadowCascade4Split: {x: 0.039639644, y: 0.111711726, z: 0.21441439}
     shadowmaskMode: 0
-    skinWeights: 2
+    skinWeights: 1
     textureQuality: 0
     anisotropicTextures: 1
     antiAliasing: 0

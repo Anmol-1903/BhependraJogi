@@ -6,10 +6,10 @@ public class BombExplosion : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.PlayDelayed(0.2f);
     }
     public void Explosion()
     {   
-        audioSource.Play();
         Collider[] colliders =  Physics.OverlapSphere(transform.position, _radius);
         foreach (Collider nearbyObjects in colliders)
         {
